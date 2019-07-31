@@ -1,0 +1,29 @@
+<div class="sign-up">
+    <div class="title">Sign Up</div>
+    <mat-card>
+        <mat-card-content>
+            <form class="signup-form">
+                <mat-form-field class="full-width">
+                    <mat-label>First Name</mat-label>
+                    <input  matInput  placeholder="First name"  name="fname"  required>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Last Name</mat-label>
+                    <input  matInput  placeholder="Last Name" name="lname"  required>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Email</mat-label>
+                    <input  matInput  placeholder="Email" name="email">
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Password</mat-label>
+                    <input  matInput  placeholder="Password"  name="password">
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+    </mat-card>
+    <mat-card-actions>
+        <button mat-raised-button (click)="register()" color="primary">SIGN UP</button>
+        <button mat-button routerLink="/">GO HOME</button>
+    </mat-card-actions>
+</div>
