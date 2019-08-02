@@ -3,13 +3,16 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule } from '@angular/material';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { LoginModule } from './login/login.module';
 import { SignUpComponent } from './sign-up-component/sign-up-component';
 import { HomeComponent } from './home/home.component';
+import { LoadsListComponent } from './loads-list/loads-list.component';
+import { LoadService } from './core/load/load.service';
 
 const routes: Routes = [
   {
@@ -35,7 +38,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     SignUpComponent,
-    HomeComponent
+    HomeComponent,
+    LoadsListComponent
   ],
   imports: [
     LoginModule,
@@ -44,9 +48,12 @@ const routes: Routes = [
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule, MatFormFieldModule, MatInputModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    LoadService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
