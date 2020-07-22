@@ -1,15 +1,16 @@
 <div class="login">
         <div class="title">Login</div>
         <mat-card>
+            <span *ngIf="error" class="errorText">There was an error logging you in.</span>
             <mat-card-content>
                 <form class="login-form">
                     <mat-form-field class="full-width">
                         <mat-label>Email</mat-label>
-                        <input  matInput  placeholder="Email" name="email" required>
+                        <input  matInput  placeholder="Email" name="email" required [(ngModel)]="email">
                     </mat-form-field>
                     <mat-form-field class="full-width">
                         <mat-label>Password</mat-label>
-                        <input  matInput  placeholder="Password"  name="password" required>
+                        <input  matInput placeholder="Password" [type]="'password'" name="password" required [(ngModel)]="password">
                     </mat-form-field>
                 </form>
             </mat-card-content>

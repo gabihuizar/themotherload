@@ -1,9 +1,9 @@
 <div class="homeBox">
     <div class="title">
-        <span>Welcome to The Motherload</span>
+        <span>Welcome to Your Projects</span>
     </div>
     <div class="login-options">
         <a mat-button routerLink="/signup">Sign Up</a>
-        <a mat-button routerLink="/login">Login</a>
+        <a *ngIf="!authService.loggedIn" (click)="authService.login()" mat-button routerLink="/login">Login</a>
     </div>
 </div>

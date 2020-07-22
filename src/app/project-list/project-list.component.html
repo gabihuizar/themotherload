@@ -1,0 +1,15 @@
+<div class="title">
+        <div>Your Projects</div>
+        <div class="title-description">Click on a project to view your tasks.</div>
+    </div>
+    <div class="loads-container">
+        <div *ngFor="let project of projects" class="load-item">
+            <div class="load-description">{{ project.name }}</div>
+            <div class="priceAndEdit">
+                <span class="edit-load" [routerLink]="['project.id', '/tasks']"><mat-icon>settings</mat-icon></span>
+            </div>
+        </div>
+        <!-- <div class="add-new" [routerLink]="['add']">
+            <mat-icon>add</mat-icon>
+        </div> -->
+    </div>

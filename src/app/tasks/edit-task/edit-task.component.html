@@ -1,0 +1,18 @@
+<div *ngIf="!loading && task" class="edit-task">
+    <mat-card>
+        <span *ngIf="error && !taskUpdated" class="errorText">There was an error.</span>
+        <span *ngIf="!loading && !error && taskUpdated" class="taskUpdated">task has been updated.</span>
+        <mat-card-content>
+            <form class="edit-form">
+                <mat-form-field class="full-width">
+                    <mat-label>Description</mat-label>
+                    <input matInput placeholder="{{task.Description}}" name="description" required [(ngModel)]="task.Description">
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+    </mat-card>
+    <mat-card-actions>
+        <button [disabled]="inSession" mat-raised-button (click)="startTask()" color="primary">Start Session</button>
+        <button [disabled]="!inSession" mat-raised-button (click)="endTask()" color="warn">End Session</button>
+    </mat-card-actions>
+</div>

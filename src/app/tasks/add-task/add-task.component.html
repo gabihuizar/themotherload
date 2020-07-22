@@ -1,0 +1,26 @@
+<div *ngIf="!loading" class="add-load">
+    <mat-card>
+        <span *ngIf="error && !loadAdded" class="errorText">There was an error.</span>
+        <span *ngIf="!loading && !error && loadAdded" class="loadAdded">Load has been added.</span>
+        <mat-card-content>
+            <form class="add-form">
+                <mat-form-field class="full-width">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="name" name="name" required [(ngModel)]="name">
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Description</mat-label>
+                    <input matInput placeholder="description" name="description" required [(ngModel)]="description">
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Price</mat-label>
+                    <input matInput placeholder="40.00" name="price" required [(ngModel)]="price">
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+    </mat-card>
+    <mat-card-actions>
+        <button mat-raised-button (click)="addLoad()" color="primary">Add</button>
+        <button mat-button routerLink="/projects">Go Back</button>
+    </mat-card-actions>
+    </div>
